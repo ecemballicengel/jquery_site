@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-blue-200">
+    <!-- login -->
+    <div
+      id="loginModal"
+      class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8"
+    >
+      <h2
+        class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+      >
+        Sign in to your account
+      </h2>
+
+      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form id="loginForm" class="space-y-6" method="POST">
+          <div>
+            <label
+              for="username"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Username</label
+            >
+            <div class="mt-2">
+              <input
+                id="username"
+                name="username"
+                type="text"
+                autocomplete="username"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Password</label
+              >
+              <div class="text-sm">
+                <a
+                  href="#"
+                  class="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >Forgot password?</a
+                >
+              </div>
+            </div>
+            <div class="mt-2">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autocomplete="current-password"
+                required
+                class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+          Not a member?
+          <a
+            href="#"
+            class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >Start a 14 day free trial</a
+          >
+        </p>
+      </div>
+    </div>
+    <!-- login -->
+    <!--Navbar Section-->
+    <nav id="navbar" class="bg-blue-500 p-4 hidden">
+      <div class="container mx-auto">
+        <div class="flex justify-between" style="width: 80%">
+          <div>
+            <a href="#" class="text-white">Anasayfa</a>
+            <a href="#" class="text-white ml-4">Ürünler</a>
+
+            <button
+              id="dropdownDefaultButton"
+              data-dropdown-toggle="dropdown"
+              class="text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+              type="button"
+            >
+              Kategoriler
+              <svg
+                class="w-2.5 h-2.5 ml-2.5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              id="dropdown"
+              class="z-10 hidden bg-blue-500 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+              <ul
+                id="categoryList"
+                class="py-2 text-sm text-white dark:text-gray-200"
+                aria-labelledby="dropdownDefaultButton"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-gray"
+                    >Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Settings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Earnings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                    >Sign out</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!-- Dropdown menu -->
+          </div>
+
+          <div class="absolute right-0 top-0 p-4">
+            <a href="#" class="text-white ml-16"
+              ><i
+                class="fa-solid fa-right-to-bracket"
+                style="color: #dddfe4"
+              ></i
+            ></a>
+            <a href="#" class="text-white ml-4" id="cartBtn"
+              ><i class="fa-solid fa-cart-shopping" style="color: #ebedef"></i
+              ><span
+                id="cartBadge"
+                class="bg-red-500 text-white ml-2 p-1 rounded-full"
+                >0</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--Navbar-->
+    <!--Main content-->
+    <div id="content" class="container mx-auto p-4 hidden">
+      <h1 class="text-3xl text-center text-grey-500">Ürünler</h1>
+      <!-- Products Listing-->
+      <div
+        id="productsListing"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        <!-- Product carts here-->
+      </div>
+    </div>
+    <!-- Main end-->
+    <!--Cart Sidebar-->
+    <div
+      id="cartSidebar"
+      class="fixed inset-y-0 right-0 bg-white p-4 shadow-lg transform translate-x-full transition-transform duration-300"
+    >
+      <!-- Cart content -->
+    </div>
+    <!-- footer -->
+    <footer
+      id="footer"
+      aria-hidden="true"
+      class="bottom-0 w-full bg-blue-200 rounded-lg shadow dark:bg-gray-900 m-4"
+    >
+      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div class="sm:flex sm:items-center sm:justify-between">
+          <ul
+            class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"
+          >
+            <li>
+              <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+            </li>
+            <li>
+              <a href="#" class="mr-4 hover:underline md:mr-6"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <span
+          class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >© 2023
+          <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>.
+          All Rights Reserved.</span
+        >
+      </div>
+    </footer>
+    <!-- footer -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+  </body>
+</html>
